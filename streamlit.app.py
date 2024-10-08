@@ -1,5 +1,5 @@
 import streamlit as st
-pip install speedtest.cli
+!pip install speedtest.cli
 import speedtest
 import time
 
