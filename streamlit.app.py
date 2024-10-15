@@ -32,15 +32,15 @@ for percent_complete in range(100):
     progress.progress(percent_complete + 1)
 
 # Display the download and upload speeds
-st.write(f"**Download speed**: {download_mbps:.2f} MBps")
-st.write(f"**Upload speed**: {upload_mbps:.2f} MBps")
+st.write(f"**Download speed**: {download_mbs:.2f} MBps")
+st.write(f"**Upload speed**: {upload_mbs:.2f} MBps")
 
 # Add a gauge-like effect using columns and colors
 st.subheader("Speed Summary")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.metric(label="Download Speed", value=f"{download_mbps:.2f} MBps")
+    st.metric(label="Download Speed", value=f"{download_mbs:.2f} MBps")
 
 with col2:
-    st.metric(label="Upload Speed", value=f"{upload_mbps:.2f} MBps")
+    st.metric(label="Upload Speed", value=f"{upload_mbs:.2f} MBps")
