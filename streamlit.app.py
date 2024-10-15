@@ -17,8 +17,8 @@ with st.spinner("Running speed test..."):
     upload_speed = test.upload()
 
 # Convert speeds to Kbps and Mbps
-download_mbps = download_speed / 1_000_000
-upload_mbps = upload_speed / 1_000_000
+download_mbps = download_speed / 8
+upload_mbps = upload_speed / 8
 
 # Display the results with basic animation
 st.success("Speed Test Completed!")
@@ -29,15 +29,15 @@ for percent_complete in range(100):
     progress.progress(percent_complete + 1)
 
 # Display the download and upload speeds
-st.write(f"**Download speed**: {download_mbps:.2f} Mbps")
-st.write(f"**Upload speed**: {upload_mbps:.2f} Mbps")
+st.write(f"**Download speed**: {download_mbps:.2f} MBps")
+st.write(f"**Upload speed**: {upload_mbps:.2f} MBps")
 
 # Add a gauge-like effect using columns and colors
 st.subheader("Speed Summary")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.metric(label="Download Speed", value=f"{download_mbps:.2f} Mbps")
+    st.metric(label="Download Speed", value=f"{download_mbps:.2f} MBps")
 
 with col2:
-    st.metric(label="Upload Speed", value=f"{upload_mbps:.2f} Mbps")
+    st.metric(label="Upload Speed", value=f"{upload_mbps:.2f} MBps")
