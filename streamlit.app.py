@@ -16,10 +16,13 @@ with st.spinner("Running speed test..."):
     download_speed = test.download()
     upload_speed = test.upload()
 
-# Convert speeds to Kbps and Mbps
-download_mbps = download_speed / 8
-upload_mbps = upload_speed / 8
+# Convert speeds from bps to Mbps (Megabits per second)
+download_mbps = download_speed / 1_000_000
+upload_mbps = upload_speed / 1_000_000
 
+# Convert Mbps to MB/s (Megabytes per second)
+download_mbs = download_mbps / 8
+upload_mbs = upload_mbps / 8
 # Display the results with basic animation
 st.success("Speed Test Completed!")
 
